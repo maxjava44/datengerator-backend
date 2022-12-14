@@ -36,7 +36,8 @@ public class NamenGenerator {
     @Path("/countries/{region}")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public List<String> getCountries(@PathParam("region") String region){
+    public List<String> getCountries(@PathParam("region") String region)
+    {
         List<String> countryNames = new ArrayList<>();
         for(Region regionObj : supplier.getRegions()){
             if(regionObj.getName().equals(region)){
@@ -50,7 +51,11 @@ public class NamenGenerator {
     @Path("/{region}/{country}/{n}/{female}")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public String[] getNames(@PathParam("region") String region,@PathParam("country") String country,@PathParam("n") String n,@PathParam("female") String female){
+    public String[] getNames(@PathParam("region") String region,
+                             @PathParam("country") String country,
+                             @PathParam("n") String n,
+                             @PathParam("female") String female)
+    {
         List<String> names = new ArrayList<>();
         Land land = null;
         for(Region regionObj : supplier.getRegions()){
@@ -73,7 +78,10 @@ public class NamenGenerator {
     @Path("/{country}/{n}/{female}")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public String[] getNamesWithoutGivingRegion(@PathParam("country") String country,@PathParam("n") String n,@PathParam("female") String female){
+    public String[] getNamesWithoutGivingRegion(@PathParam("country") String country,
+                                                @PathParam("n") String n,
+                                                @PathParam("female") String female)
+    {
         List<String> names = new ArrayList<>();
         Land land = null;
         for(Region regionObj : supplier.getRegions()){
@@ -95,7 +103,8 @@ public class NamenGenerator {
     @Path("/region/{country}")
     @GET
     @Produces(MediaType.TEXT_PLAIN)
-    public String getRegionFromCountry(@PathParam("country") String country) {
+    public String getRegionFromCountry(@PathParam("country") String country) 
+    {
         for(Region regionObj : supplier.getRegions()){
             for(Land landObj : regionObj.getLaender()){
                 if (landObj.getLandName().equals(country)){
