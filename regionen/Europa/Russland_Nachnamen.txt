@@ -1,0 +1,10 @@
+Smirnov
+Ivanov
+Kuznetsov
+Popov
+Sokolov
+Lebedev
+Kozlov
+Novikov
+Morozov
+Petrov
