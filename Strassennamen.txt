@@ -1,0 +1,101 @@
+Hauptstraße
+Schulstraße
+Gartenstraße
+Bahnhofstraße
+Dorfstraße
+Bergstraße
+Birkenweg
+Lindenstraße
+Kirchstraße
+Waldstraße
+Ringstraße
+Schillerstraße
+Amselweg
+Goethestraße
+Wiesenweg
+Buchenweg
+Jahnstraße
+Wiesenstraße
+Ahornweg
+Finkenweg
+Eichenweg
+Am Sportplatz
+Feldstraße
+Mühlenweg
+Rosenstraße
+Erlenweg
+Friedhofstraße
+Blumenstraße
+Lindenweg
+Tannenweg
+Brunnenstraße
+Kirchweg
+Bachstraße
+Raiffeisenstraße
+Mozartstraße
+Rosenweg
+Lerchenweg
+Drosselweg
+Mühlenstraße
+Talstraße
+Gartenweg
+Industriestraße
+Mittelstraße
+Beethovenstraße
+Poststraße
+Waldweg
+Kirchplatz
+Meisenweg
+Fliederweg
+Kirchgasse
+Am Bahnhof
+Breslauer Straße
+Lessingstraße
+Schloßstraße
+Kiefernweg
+Fasanenweg
+Burgstraße
+Neue Straße
+Birkenstraße
+Uhlandstraße
+Kastanienweg
+Königsberger Straße
+Tulpenweg
+Schulweg
+Im Winkel
+Mühlweg
+Marktplatz
+Parkstraße
+Danziger Straße
+Grüner Weg
+Kapellenweg
+Schützenstraße
+Berliner Straße
+Mittelweg
+Römerstraße
+Eschenweg
+Heideweg
+Nelkenweg
+Fichtenweg
+Am Anger
+Ulmenweg
+Stettiner Straße
+Wilhelmstraße
+Lärchenweg
+Sonnenstraße
+Schubertstraße
+Friedrichstraße
+Eichendorffstraße
+Am Hang
+Sudetenstraße
+Marienstraße
+Friedhofsweg
+Marktstraße
+Kurze Straße
+Brückenstraße
+Eichenstraße
+Schwalbenweg
+Ginsterweg
+Neuer Weg
+Lange Straße
+Nordstraße
