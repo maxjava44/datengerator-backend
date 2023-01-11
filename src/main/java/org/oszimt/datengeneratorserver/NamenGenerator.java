@@ -21,6 +21,9 @@ public class NamenGenerator {
     @Inject
     RegionSupplier supplier;
 
+    @Inject
+    StreetSupplier streetSupplier;
+
 
     @OPTIONS
     @CrossOrigin()
@@ -33,6 +36,13 @@ public class NamenGenerator {
         List<String> regionNames = new ArrayList<>();
         supplier.getRegions().forEach(r -> regionNames.add(r.getName()));
         return regionNames;
+    }
+
+    @Path("/street/{howMany}")
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<String> getStreets(@PathParam("howMany") int howMany) {
+        return List.of(streetSupplier.getRandomStrassen(howMany));
     }
 
     @Path("/countries/{region}")
