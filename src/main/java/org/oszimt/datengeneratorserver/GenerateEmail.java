@@ -2,7 +2,7 @@ package org.oszimt.datengeneratorserver;
 
 public class GenerateEmail {
 
-        public String generateRandomEmail() {
+        public static String generateRandomEmail() {
             String emailAddress = "";
             String alphabet = "abcdefghijklmnopqrstuvwxyz";
             String domain = "gmail.com";
