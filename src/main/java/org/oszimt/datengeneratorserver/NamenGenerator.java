@@ -48,6 +48,9 @@ public class NamenGenerator {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public List<String> getStreets(@PathParam("howMany") int howMany) {
+        if(howMany > 200){
+            return new ArrayList<>();
+        }
         return List.of(streetSupplier.getRandomStrassen(howMany));
     }
 
@@ -70,8 +73,11 @@ public class NamenGenerator {
     @Produces(MediaType.APPLICATION_JSON)
     public String[] getNames(@PathParam("region") String region,
                              @PathParam("country") String country,
-                             @PathParam("n") String n,
+                             @PathParam("n") int n,
                              @PathParam("female") String female){
+        if(n > 200){
+            return new String[0];
+        }
         List<String> names = new ArrayList<>();
         Land land = null;
         for(Region regionObj : supplier.getRegions()){
@@ -83,7 +89,7 @@ public class NamenGenerator {
                 }
             }
         }
-        int number = Integer.parseInt(n);
+        int number = n;
         boolean isFemale = Boolean.parseBoolean(female);
         if(land != null) {
             return GenerateNames.generateNames(supplier.getRegions(),land,number,isFemale);
@@ -94,7 +100,7 @@ public class NamenGenerator {
     @Path("/{country}/{n}/{female}")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public String[] getNamesWithoutGivingRegion(@PathParam("country") String country,@PathParam("n") String n,@PathParam("female") String female){
+    public String[] getNamesWithoutGivingRegion(@PathParam("country") String country,@PathParam("n") int n,@PathParam("female") String female){
         List<String> names = new ArrayList<>();
         Land land = null;
         for(Region regionObj : supplier.getRegions()){
@@ -105,7 +111,10 @@ public class NamenGenerator {
                     }
                 }
         }
-        int number = Integer.parseInt(n);
+        if(n > 200){
+            return new String[0];
+        }
+        int number = n;
         boolean isFemale = Boolean.parseBoolean(female);
         if(land != null) {
             return GenerateNames.generateNames(supplier.getRegions(),land,number,isFemale);
