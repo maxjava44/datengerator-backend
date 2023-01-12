@@ -1,26 +1,32 @@
 package org.oszimt.datengeneratorserver;
 
+import jakarta.enterprise.context.ApplicationScoped;
+
 import java.util.GregorianCalendar;
+
+@ApplicationScoped
 
 public class Datumsgenerator {
 
-    public static void main(String[] args) {
-
+    public String[] genJahre(int n) {
+        String[] jahre = new String[n];
         GregorianCalendar gc = new GregorianCalendar();
 
-        int year = randBetween(2019, 2023);
+        for(int i = 0; i < n; i++) {
+            int year = randBetween(2019, 2023);
 
-        gc.set(gc.YEAR, year);
+            gc.set(GregorianCalendar.YEAR, year);
 
-        int dayOfYear = randBetween(1, gc.getActualMaximum(gc.DAY_OF_YEAR));
+            int dayOfYear = randBetween(1, gc.getActualMaximum(GregorianCalendar.DAY_OF_YEAR));
 
-        gc.set(gc.DAY_OF_YEAR, dayOfYear);
+            gc.set(GregorianCalendar.DAY_OF_YEAR, dayOfYear);
 
-        System.out.println(gc.get(gc.DAY_OF_MONTH) + "." + (gc.get(gc.MONTH) + 1) + "." + gc.get(gc.YEAR));
-
+            jahre[i] = gc.get(GregorianCalendar.DAY_OF_MONTH) + "." + (gc.get(GregorianCalendar.MONTH) + 1) + "." + gc.get(GregorianCalendar.YEAR);
+        }
+        return jahre;
     }
 
-    public static int randBetween(int start, int end) {
+    public int randBetween(int start, int end) {
         return start + (int)Math.round(Math.random() * (end - start));
     }
 }

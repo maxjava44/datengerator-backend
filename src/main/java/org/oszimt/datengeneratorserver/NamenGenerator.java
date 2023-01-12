@@ -30,6 +30,9 @@ public class NamenGenerator {
     @Inject
     Telefonnummer telNrSupplier;
 
+    @Inject
+    Datumsgenerator dateSupplier;
+
 
     @OPTIONS
     @CrossOrigin()
