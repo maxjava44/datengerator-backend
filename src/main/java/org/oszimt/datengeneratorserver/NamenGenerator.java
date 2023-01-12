@@ -33,6 +33,16 @@ public class NamenGenerator {
     @Inject
     Datumsgenerator dateSupplier;
 
+    @Path("/email/{howMany}")
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<String> getMail(@PathParam("howMany") int howMany) {
+        if(howMany > 200){
+            return new ArrayList<>();
+        }
+        return List.of(emailSupplier.generateRandomEmail(howMany));
+    }
+
 
     @OPTIONS
     @CrossOrigin()
