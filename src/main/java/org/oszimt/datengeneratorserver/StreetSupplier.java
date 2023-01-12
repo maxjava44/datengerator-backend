@@ -1,6 +1,8 @@
 package org.oszimt.datengeneratorserver;
 
 import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.enterprise.context.ConversationScoped;
+import jakarta.enterprise.context.Initialized;
 
 import java.io.BufferedReader;
 import java.nio.file.Files;
@@ -18,7 +20,7 @@ public class StreetSupplier {
         String[] strassenArr = new String[howMany];
         Random rng = new Random();
         for(int i = 0;i< strassenArr.length;i++){
-            strassenArr[i] = strassen.get(rng.nextInt(strassen.size())) + rng.nextInt(100) + orte.get(rng.nextInt(orte.size()));
+            strassenArr[i] = strassen.get(rng.nextInt(strassen.size())) + " " + rng.nextInt(100) + " " + orte.get(rng.nextInt(orte.size()));
         }
         return strassenArr;
     }
@@ -28,7 +30,7 @@ public class StreetSupplier {
             String line = readerStreet.readLine();
             while((line = readerStreet.readLine()) != null) {
                 String[] components = line.split(",");
-                String ort = components[3] + components[2] + components[5];
+                String ort = components[3] + " " + components[2] + " " + components[5];
                 orte.add(ort);
             }
         }catch(Exception e) {

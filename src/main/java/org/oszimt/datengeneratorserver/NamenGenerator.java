@@ -24,6 +24,9 @@ public class NamenGenerator {
     @Inject
     StreetSupplier streetSupplier;
 
+    @Inject
+    GenerateEmail emailSupplier;
+
 
     @OPTIONS
     @CrossOrigin()

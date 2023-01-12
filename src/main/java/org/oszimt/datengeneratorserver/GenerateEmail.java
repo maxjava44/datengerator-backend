@@ -1,8 +1,12 @@
 package org.oszimt.datengeneratorserver;
 
+import jakarta.enterprise.context.ApplicationScoped;
+
+@ApplicationScoped
+
 public class GenerateEmail {
 
-        public static String generateRandomEmail() {
+        public String generateRandomEmail() {
             String emailAddress = "";
             String alphabet = "abcdefghijklmnopqrstuvwxyz";
             String domain = "gmail.com";
