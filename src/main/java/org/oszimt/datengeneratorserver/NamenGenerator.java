@@ -27,6 +27,9 @@ public class NamenGenerator {
     @Inject
     GenerateEmail emailSupplier;
 
+    @Inject
+    Telefonnummer telNrSupplier;
+
 
     @OPTIONS
     @CrossOrigin()
