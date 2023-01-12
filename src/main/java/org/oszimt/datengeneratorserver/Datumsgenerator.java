@@ -1,3 +1,5 @@
+package org.oszimt.datengeneratorserver;
+
 import java.util.GregorianCalendar;
 
 public class Datumsgenerator {
