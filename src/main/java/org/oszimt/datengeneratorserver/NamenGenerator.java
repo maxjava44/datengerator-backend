@@ -180,6 +180,7 @@ public class NamenGenerator {
                 result.append(jsonContent);
                 result.append(";");
             }
+            result.deleteCharAt(result.lastIndexOf(";"));
             result.append("\n");
         }
 
