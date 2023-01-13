@@ -54,7 +54,6 @@ public class GenerateNames {
                 String replacementCountry = vornamenMapping.get(regionName.get());
                 for(Region regionObj : regions){
                     for(Land landObj : regionObj.getLaender()){
-                        System.out.println(landObj.getLandName());
                         if (landObj.getLandName().equals(replacementCountry)){
                             List<Vornamen> filteredList = landObj.getVornamen().stream().filter(v -> v.getFemale() == female).collect(Collectors.toList());
                             if(filteredList.size() == 1){

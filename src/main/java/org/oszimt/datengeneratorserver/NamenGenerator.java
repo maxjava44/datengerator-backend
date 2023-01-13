@@ -33,6 +33,16 @@ public class NamenGenerator {
     @Inject
     Datumsgenerator dateSupplier;
 
+    @Path("/datum/{howMany}")
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<String> getDatum(@PathParam("howMany") int howMany) {
+        if(howMany > 200){
+            return new ArrayList<>();
+        }
+        return List.of(dateSupplier.genJahre(howMany));
+    }
+
     @Path("/telnr/{howMany}")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
