@@ -13,7 +13,7 @@ public class Datumsgenerator {
         GregorianCalendar gc = new GregorianCalendar();
 
         for(int i = 0; i < n; i++) {
-            int year = randBetween(2019, 2023);
+            int year = randBetween(1933, 2023);
 
             gc.set(GregorianCalendar.YEAR, year);
 
