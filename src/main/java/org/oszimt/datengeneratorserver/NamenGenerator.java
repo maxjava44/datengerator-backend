@@ -33,6 +33,16 @@ public class NamenGenerator {
     @Inject
     Datumsgenerator dateSupplier;
 
+    @Path("/telnr/{howMany}")
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<String> getTel(@PathParam("howMany") int howMany) {
+        if(howMany > 200){
+            return new ArrayList<>();
+        }
+        return List.of(telNrSupplier.randomTelefonnummern(howMany));
+    }
+
     @Path("/email/{howMany}")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
@@ -102,10 +112,9 @@ public class NamenGenerator {
                 }
             }
         }
-        int number = n;
         boolean isFemale = Boolean.parseBoolean(female);
         if(land != null) {
-            return GenerateNames.generateNames(supplier.getRegions(),land,number,isFemale);
+            return GenerateNames.generateNames(supplier.getRegions(),land,n,isFemale);
         }
             return new String[0];
     }
@@ -127,10 +136,9 @@ public class NamenGenerator {
         if(n > 200){
             return new String[0];
         }
-        int number = n;
         boolean isFemale = Boolean.parseBoolean(female);
         if(land != null) {
-            return GenerateNames.generateNames(supplier.getRegions(),land,number,isFemale);
+            return GenerateNames.generateNames(supplier.getRegions(),land,n,isFemale);
         }
         return new String[0];
     }
