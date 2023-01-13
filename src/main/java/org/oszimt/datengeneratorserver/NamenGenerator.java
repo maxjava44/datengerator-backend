@@ -171,11 +171,11 @@ public class NamenGenerator {
     @POST
     @Produces(MediaType.APPLICATION_OCTET_STREAM)
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response getRegionFromCountry(Object jsonObject) {
+    public Response getRegionFromCountry(ArrayList<ArrayList<String>> jsonObject) {
         System.out.println(jsonObject.getClass());
         StringBuilder result = new StringBuilder("Name;Addresse;E-Mail;Tel Nr.;Geburtsdatum\n");
 
-        for (ArrayList<String> jsonArr : (ArrayList<ArrayList<String>>)jsonObject) {
+        for (ArrayList<String> jsonArr : jsonObject) {
             for(String jsonContent : jsonArr) {
                 result.append(jsonContent);
                 result.append(";");
