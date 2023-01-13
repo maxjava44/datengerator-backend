@@ -171,16 +171,14 @@ public class NamenGenerator {
     @POST
     @Produces(MediaType.APPLICATION_OCTET_STREAM)
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response getRegionFromCountry(ArrayList<String> jsonObject) {
-        StringBuilder result = new StringBuilder("Vorname;Nachname\n");
+    public Response getRegionFromCountry(ArrayList<ArrayList<String>> jsonObject) {
+        StringBuilder result = new StringBuilder("Name;Addresse;E-Mail;Tel Nr.;Geburtsdatum\n");
 
-        for (String jsonname : jsonObject) {
-            String[] gesamterName = jsonname.split(" ");
-            String vorname = gesamterName[0];
-            String name = gesamterName[1];
-            result.append(vorname);
-            result.append(";");
-            result.append(name);
+        for (ArrayList<String> jsonArr : jsonObject) {
+            for(String jsonContent : jsonArr) {
+                result.append(jsonContent);
+                result.append(";");
+            }
             result.append("\n");
         }
 
