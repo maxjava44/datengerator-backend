@@ -195,6 +195,7 @@ public class NamenGenerator {
         StringBuilder result = new StringBuilder("Vorname;Nachname\n");
 
          for (String jsonname : jsonObject) {
+             jsonname = jsonname.replace("ü","ue").replace("ä","ae").replace("ö","oe").replace("ß","ss");
              String[] gesamterName = jsonname.split(" ");
              String vorname = gesamterName[0];
              String name = gesamterName[1];
