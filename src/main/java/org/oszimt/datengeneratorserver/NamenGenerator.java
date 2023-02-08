@@ -176,6 +176,7 @@ public class NamenGenerator {
 
         for (ArrayList<String> jsonArr : jsonObject) {
             for(String jsonContent : jsonArr) {
+                jsonContent = jsonContent.replace("ü","ue").replace("ä","ae").replace("ö","oe").replace("ß","ss");
                 result.append(jsonContent);
                 result.append(";");
             }
