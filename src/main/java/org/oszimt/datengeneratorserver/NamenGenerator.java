@@ -203,6 +203,8 @@ public class NamenGenerator {
              result.append(vorname);
              result.append(";");
              result.append(name);
+             result.append(";");
+             result.append("/n");
         }
 
 
