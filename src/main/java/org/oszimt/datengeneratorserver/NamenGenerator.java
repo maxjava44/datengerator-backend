@@ -187,5 +187,25 @@ public class NamenGenerator {
         return Response.ok(result.toString()).header("Content-Disposition","attachment; filename=\"data.csv\"; filename*=\"data.csv\"").build();
     }
 
+    @Path("downloadalt")
+    @POST
+    @Produces(MediaType.APPLICATION_OCTET_STREAM)
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response downloadalt(ArrayList<String> jsonObject) {
+        StringBuilder result = new StringBuilder("Vorname;Nachname\n");
+
+         for (String jsonname : jsonObject) {
+             String[] gesamterName = jsonname.split(" ");
+             String vorname = gesamterName[0];
+             String name = gesamterName[1];
+             result.append(vorname);
+             result.append(";");
+             result.append(name);
+        }
+
+
+        return Response.ok(result.toString()).header("Content-Disposition","attachment; filename=\"data.csv\"; filename*=\"data.csv\"").build();
+    }
+
 
 }
